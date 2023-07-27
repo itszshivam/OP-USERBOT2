@@ -1,4 +1,4 @@
-<img src="https://telegra.ph/file/96eb71d6085b280e96420.jpg">
+<img src="https://telegra.ph/file/35840f21ed3e24fedd540.jpg">
 
 <p align="center">◉ 𝐎𝐕𝐄𝐑 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 ◉ 𝕌𝕊𝔼ℝ𝔹𝕆𝕋 ✨ </p>
 
