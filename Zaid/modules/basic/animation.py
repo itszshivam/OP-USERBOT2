@@ -133,7 +133,7 @@ async def wink(client: Client, message: Message):
 
 @Client.on_message(filters.command("hug", ".") & filters.me)
 async def hug(client: Client, message: Message):
-    hmm_s = "https://some-random-api.ml/animu/hug"
+    hmm_s = "https://telegra.ph//file/e6eb2b8fbcd70609201d4.gif"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await client.send_video(message.chat.id, image_s)
@@ -142,7 +142,7 @@ async def hug(client: Client, message: Message):
 
 @Client.on_message(filters.command("pat", ".") & filters.me)
 async def pat(client: Client, message: Message):
-    hmm_s = "https://some-random-api.ml/animu/pat"
+    hmm_s = "https://telegra.ph//file/88fab4d09ebe709d93c7a.mp4"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await client.send_video(message.chat.id, image_s)
@@ -151,7 +151,7 @@ async def pat(client: Client, message: Message):
 
 @Client.on_message(filters.command("pikachu", ".") & filters.me)
 async def pikachu(client: Client, message: Message):
-    hmm_s = "https://some-random-api.ml/img/pikachu"
+    hmm_s = "https://telegra.ph//file/c88ecea0265fee80aaf30.mp4"
     r = requests.get(url=hmm_s).json()
     image_s = r["link"]
     await client.send_video(message.chat.id, image_s)
@@ -299,7 +299,7 @@ async def gahah(client: Client, message: Message):
         "--------------->",
         "------>;(^。^)ノ ",
         " (￣ー￣) DEAD ",
-        " **Mrr Gya Matherchod lala la 😈.😈.😈.😈.😈.😈.😈......** ",
+        " **Mrr Gya Madharchod lala la 😈.😈.😈.😈.😈.😈.😈......** ",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -616,7 +616,7 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`-DIED-`")
 
 
-@Client.on_message(filters.command(["sayang", "lover"], ".") & filters.me)
+@Client.on_message(filters.command(["loveu", "lover"], ".") & filters.me)
 async def zeyenk(client: Client, message: Message):
     e = await edit_or_reply(message, "I LOVEE YOUUU 💕")
     await e.edit("💝💘💓💗")
@@ -635,7 +635,7 @@ async def zeyenk(client: Client, message: Message):
     await e.edit("💘💘💘💘")
     await e.edit("LOVE")
     await e.edit("I")
-    await e.edit("LOVE")
+    await e.edit("LOVE YOU")
     await e.edit("BABY")
     await e.edit("I LOVE YOUUUU")
     await e.edit("MY BABY")
@@ -874,7 +874,7 @@ async def helikopter(client: Client, message: Message):
 async def dornembak(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Do you want to be my boyfriend??!**",
+        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n **Do you want to be my boyfriend??!**",
     )
 
 
@@ -1298,7 +1298,7 @@ add_command_help(
         ["dino", "To display dino chased animation."],
         ["santet", "To display online blackmail animation."],
         ["gabut", "To display the animation gait."],
-        ["sayang or lover", "To display the animation dear."],
+        ["loveu or lover", "To display the animation dear."],
         ["hack", "To display a fake hacking animation."],
         ["bomb", "To display the Bomb animation."],
         ["brain", "To display the Brain animation 🧠."],
@@ -1317,10 +1317,8 @@ add_command_help(
         ["wink", "To Get A Winking Gifs."],
         ["love", "To Propose Someone."],
         ["loveyou", "It Will Send Random Emojis."],
-        [
-            "pat",
-            "To get a pat gifs",
-        ],
+        ["pat", "To get a pat gifs."],
+        ["koc", "To display mutthi."],
         [
             "pikachu",
             "to get a Pikachu Gifs",
@@ -1338,11 +1336,11 @@ add_command_help(
             "Get Dong",
         ],
         [
-            "ganstar",
+            "gang or gangstar",
             "Animation Gangster",
         ],
         [
-            "charge",
+            "charging",
             " Tesla animation charging",
         ],
     ],
