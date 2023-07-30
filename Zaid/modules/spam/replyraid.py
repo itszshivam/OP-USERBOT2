@@ -129,9 +129,9 @@ add_command_help(
 )
 
 @Client.on_message(
-    filters.command(["dreplyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["dreplyraid", "drraid"], ".") & (filters.me | filters.user(SUDO_USER))
 )
-async def gmute_user(client: Client, message: Message):
+async def dreplyraid(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.edit_text("`Processing...`")
@@ -162,7 +162,7 @@ async def gmute_user(client: Client, message: Message):
 add_command_help(
     "replyraid",
     [
-        [".replyraid", "Reply To User\n To Raid on Someone."],
-        [".dreplyraid", "To Disable ReplyRaid."],
+        [".replyraid or .rraid", "Reply To User\n To Raid on Someone."],
+        [".dreplyraid or .drraid", "To Disable ReplyRaid."],
     ],
 )
