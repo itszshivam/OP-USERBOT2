@@ -23,7 +23,7 @@ SUDO_USERS = SUDO_USER
 RAIDS = []
 
 @Client.on_message(
-    filters.command(["pornspam"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["pspam"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def pornspam(xspam: Client, e: Message): 
     counts = e.command[0]
