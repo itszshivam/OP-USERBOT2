@@ -23,10 +23,10 @@ SUDO_USERS = SUDO_USER
 RAIDS = []
 
 @Client.on_message(
-    filters.command(["pspam"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["pornspam", "pspam"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def pornspam(xspam: Client, e: Message): 
-    counts = e.command[0]
+    counts = e.command[1]
     if not counts:
         return await e.reply_text(usage)
     if int(e.chat.id) in GROUP:
@@ -123,7 +123,7 @@ add_command_help(
     "raid",
     [
         [".raid", "<user id and count>`."],
-        [".pornspam", "<count>`."],
+        [".pornspam or .pspam", "<count>`."],
         [".hang", "Make telegram hang."],
     ],
 )
