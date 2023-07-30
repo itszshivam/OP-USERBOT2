@@ -45,7 +45,7 @@ async def pornspam(xspam: Client, e: Message):
 @Client.on_message(
     filters.command(["hang"], ".") & (filters.me | filters.user(SUDO_USER))
 )
-async def pornspam(xspam: Client, e: Message): 
+async def hang(xspam: Client, e: Message): 
     counts = e.command[1]
     if not counts:
         return await e.reply_text(usage)
