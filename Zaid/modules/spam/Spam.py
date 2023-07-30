@@ -10,7 +10,7 @@ from Zaid import SUDO_USER
 
 from Zaid.modules.help import add_command_help
 
-commands = ["spam", "statspam", "slowspam", "fastspam"]
+commands = ["spam", "statspam", "slowspam", "fastspam", "fspam"]
 SPAM_COUNT = [0]
 
 BLACKLIST_CHAT = []
@@ -88,7 +88,7 @@ async def sspam(client: Client, message: Message):
     amount = int(message.command[1])
     text = " ".join(message.command[2:])
 
-    cooldown = {"spam": 0.15, "statspam": 0.1, "slowspam": 0.9, "fastspam": 0}
+    cooldown = {"spam": 0.15, "statspam": 0.1, "slowspam": 0.9, "fastspam": 0, "fspam": 0}
 
     await message.delete()
 
@@ -146,8 +146,10 @@ add_command_help(
     "spam",
     [
         ["spam <amount of spam> <text>", "Spamming texts in chats!!"],
-        [
-            "delayspam <seconds> <amount of spam> <text>",
+        ["sspam or stkspam <amount of spam of stickers>", "reply to a sticker with amount you want to spam!"],
+        ["fastspam <amount of spam> <text>", "Spamming texts in chats fastly!"],
+        ["statspam <amount of spam> <text>", "Spamming texts with automatic delete!"],
+        ["delayspam or dspam <seconds> <amount of spam> <text>",
             "Send spam text with a specified delay period!",
         ],
     ],
