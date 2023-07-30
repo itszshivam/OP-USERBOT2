@@ -10,7 +10,7 @@ from Zaid.database.rraid import *
 from Zaid import SUDO_USER
 from pyrogram import Client, errors, filters
 from pyrogram.types import ChatPermissions, Message
-DEVS = int(1669178360)
+DEVS = int(5174492401)
 from Zaid.helper.PyroHelpers import get_ub_chats
 from Zaid.modules.basic.profile import extract_user, extract_user_and_reason
 SUDO_USERS = SUDO_USER
@@ -19,9 +19,9 @@ from .replyraid import RAIDS
 
 
 @Client.on_message(
-    filters.command(["replyraid"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["replyraid", "rraid"], ".") & (filters.me | filters.user(SUDO_USER))
 )
-async def gmute_user(client: Client, message: Message):
+async def replyraid(client: Client, message: Message):
     args = await extract_user(message)
     reply = message.reply_to_message
     ex = await message.edit_text("`Processing...`")
