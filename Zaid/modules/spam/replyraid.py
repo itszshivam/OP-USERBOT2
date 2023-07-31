@@ -118,67 +118,6 @@ async def raid(xspam: Client, e: Message):
       else:
           await e.reply_text("Usage: .raid count username")
 
-@Client.on_message(
-    filters.command(["sraid"], ".") & (filters.me | filters.user(SUDO_USER))
-)
-async def sraid(xspam: Client, e: Message):  
-      Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Zaid) == 2:
-          counts = int(Zaid[0])
-          ok = await xspam.get_users(Zaid[1])
-          id = ok.id
-          else:
-              fname = ok.first_name
-              mention = f"[{fname}](tg://user?id={id})"
-              for _ in range(counts):
-                    reply = choice(SRAID)
-                    msg = f"{mention} {reply}"
-                    await xspam.send_message(e.chat.id, msg)
-                    await asyncio.sleep(0.10)
-      else:
-          await e.reply_text("Usage: .sraid count username")
-
-@Client.on_message(
-    filters.command(["mraid"], ".") & (filters.me | filters.user(SUDO_USER))
-)
-async def mraid(xspam: Client, e: Message):  
-      Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Zaid) == 2:
-          counts = int(Zaid[0])
-          ok = await xspam.get_users(Zaid[1])
-          id = ok.id
-          else:
-              fname = ok.first_name
-              mention = f"[{fname}](tg://user?id={id})"
-              for _ in range(counts):
-                    reply = choice(MRAID)
-                    msg = f"{mention} {reply}"
-                    await xspam.send_message(e.chat.id, msg)
-                    await asyncio.sleep(0.10)
-      else:
-          await e.reply_text("Usage: .mraid count username")
-          
-
-@Client.on_message(
-    filters.command(["craid"], ".") & (filters.me | filters.user(SUDO_USER))
-)
-async def craid(xspam: Client, e: Message):  
-      Zaid = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Zaid) == 2:
-          counts = int(Zaid[0])
-          ok = await xspam.get_users(Zaid[1])
-          id = ok.id
-          else:
-              fname = ok.first_name
-              mention = f"[{fname}](tg://user?id={id})"
-              for _ in range(counts):
-                    reply = choice(CRAID)
-                    msg = f"{mention} {reply}"
-                    await xspam.send_message(e.chat.id, msg)
-                    await asyncio.sleep(0.10)
-      else:
-          await e.reply_text("Usage: .craid count username")
-
 
 add_command_help(
     "raid",
@@ -186,9 +125,6 @@ add_command_help(
         [".raid", "<user id and count>`."],
         [".pornspam or .pspam", "<count>`."],
         [".hang", "Make telegram hang."],
-        [".mraid", "<user id and count>`. To love raid."],
-        [".sraid", "<user id and count>`. To shayri raid."],
-        [".craid", "<user id and count>`. To letters raid."],
     ],
 )
 
