@@ -1386,6 +1386,7 @@ add_command_help(
     "animation",
     [
         ["fuck", "To display the middle finger animation."],
+        ["ular", "To display the ular animation."],
         ["dino", "To display dino chased animation."],
         ["santet", "To display online blackmail animation."],
         ["gabut", "To display the animation gait."],
