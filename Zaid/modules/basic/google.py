@@ -12,7 +12,7 @@ from Zaid.modules.help import *
 def googlesearch(query):
     co = 1
     returnquery = {}
-    for j in search(query, tld="co.in", num=10, stop=10, pause=2):
+    for j in search(query, tld=".com", num=10, stop=10, pause=2):
         url = str(j)
         response = requests.get(url)
         soup = BeautifulSoup(response.text, "html.parser")
@@ -29,36 +29,37 @@ def googlesearch(query):
         co = co + 1
     return returnquery
 
-@register(pattern="^/google (.*)")
-async def _(event):
-    if event.fwd_from:
+@Client.on_message(filters.command(["gs", "google"], ".") & filters.me)
+async def gs(client: Client, message: Message):
+    Man = await edit_or_reply(message, "`Processing...`")
+    msg_txt = message.text
+    returnmsg = ""
+    query = None
+    if " " in msg_txt:
+        query = msg_txt[msg_txt.index(" ") + 1 : len(msg_txt)]
+    else:
+        await Man.edit("Give a query to search")
         return
-
-    webevent = await event.reply("Searching...")
-    match = event.pattern_match.group(1)
-    page = re.findall(r"page=\d+", match)
-    try:
-        page = page[0]
-        page = page.replace("page=", "")
-        match = match.replace("page=" + page[0], "")
-    except IndexError:
-        page = 1
-    search_args = (str(match), int(page))
-    gsearch = GoogleSearch()
-    gresults = await gsearch.async_search(*search_args)
-    msg = ""
-    for i in range(len(gresults["links"])):
-        try:
-            title = gresults["titles"][i]
-            link = gresults["links"][i]
-            desc = gresults["descriptions"][i]
-            msg += f"❍[{title}]({link})\n**{desc}**\n\n"
-        except IndexError:
-            break
-    await webevent.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
-    )
-
+    results = googlesearch(query)
+    for i in range(1, 10, 1):
+        presentquery = results[i]
+        presenttitle = presentquery["title"]
+        presentmeta = presentquery["metadata"]
+        presenturl = presentquery["url"]
+        print(presentquery)
+        print(presenttitle)
+        print(presentmeta)
+        print(presenturl)
+        if not presentmeta:
+            presentmeta = ""
+        else:
+            presentmeta = presentmeta[0]
+        returnmsg = (
+            returnmsg
+            + f"[{str(presenttitle)}]({str(presenturl)})\n{str(presentmeta)}\n\n"
+        )
+    await Man.edit(returnmsg)
+    
 
 
 
