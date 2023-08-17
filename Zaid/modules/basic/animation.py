@@ -452,6 +452,40 @@ async def kocok(client: Client, message: Message):
     await e.edit("RIP 😭😭😭😭")
 
 
+@Client.on_message(filters.command(["muth"], ".") & filters.me)
+async def muth(client: Client, message: Message):
+    e = await edit_or_reply(message, "👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("👉        ✊")
+    await e.edit("👉    ✊")
+    await e.edit("👉✊")
+    await e.edit("👉✊💦")
+    await e.edit("RIP 😭😭😭😭"
+                 
+                 
 @Client.on_message(filters.command(["fuck", "fucek"], ".") & filters.me)
 async def ngefuck(client: Client, message: Message):
     e = await edit_or_reply(message, ".                       /¯ )")
